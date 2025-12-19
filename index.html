@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onclick="playMusic()"> <audio id="birthdayMusic" loop>
+        <source src="tu-musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="container">
+        <div class="card">
+            <div class="imgBox">
+                <img src="img.jpg" alt="Portada">
+            </div>
+            <div class="content">
+                <h2>¡Feliz Cumpleaños!</h2>
+                <p>
+                   Feliz cumpleaños; sé que el camino está siendo duro, pero no olvides que ninguna tormenta es eterna y que todo esto también pasará. Tu valentía para seguir caminando entre las piedras es lo que te hace increíble, y muy pronto el horizonte volverá a estar despejado. Celebra hoy tu resistencia y tu luz, porque lo mejor de tu historia aún está por escribirse. <br>
+                    
+                </p>
+                <p><strong></strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("birthdayMusic");
+            audio.play();
+        }
+        
+        // Intento de reproducción automática al cargar
+        window.addEventListener('load', () => {
+            const audio = document.getElementById("birthdayMusic");
+            audio.play().catch(error => {
+                console.log("El navegador bloqueó el autoplay. Haz clic en la pantalla para sonar.");
+            });
+        });
+    </script>
+</body>
+</html>
